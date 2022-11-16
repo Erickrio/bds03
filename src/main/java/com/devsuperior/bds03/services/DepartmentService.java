@@ -18,7 +18,7 @@ public class DepartmentService {
 	private DepartmentRepository repository;
 	
 	public List<DepartmentDTO> findAll() {
-		List<Department> list = repository.findAll(Sort.by("name"));
+		List<Department> list = repository.findAll(Sort.by("name")); //consulta ordenando por nome
 		return list.stream().map(x -> new DepartmentDTO(x)).collect(Collectors.toList());
 	}
 }
