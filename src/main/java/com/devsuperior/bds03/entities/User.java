@@ -29,6 +29,7 @@ public class User implements UserDetails, Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(unique = true)
 	private String email;
 	private String password;
@@ -113,7 +114,7 @@ public class User implements UserDetails, Serializable {
 		return email;
 	}
 
-	@Override //implementa aqui logicas de contas expirada
+	@Override
 	public boolean isAccountNonExpired() {
 		return true;
 	}
